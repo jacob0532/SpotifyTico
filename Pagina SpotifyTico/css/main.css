@@ -1,0 +1,15 @@
+.slider {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+.slider img {
+  flex: 0 0 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+body {
+  margin: 0;
+}
