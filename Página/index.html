@@ -64,6 +64,7 @@
                                         <li> <a href="album.html">Álbum</a> </li>
                                         <li> <a href="#contact">Registrarse</a> </li>
                                         <li> <a href="#contact">Iniciar sesión</a> </li>
+                                        <button id='button-search'>Botoncito</button>
                                     </ul>
                                 </nav>
                             </div>
@@ -92,10 +93,11 @@
                         <div class="flexsearch--wrapper">
                             <form name="formulario1"class="flexsearch--form" action="#" method="post">
                                 <div class="flexsearch--input-wrapper">
-                                    <input class="flexsearch--input" type="search" placeholder="search">
+                                    <input class="flexsearch--input" type="search" placeholder="search" id='search-bar'>
                                 </div>
                                 <input class="flexsearch--submit" type="submit" value="&#10140;"/>
                             </form>
+                            <ul class="list-group" id='posicion-Resultados'></ul>
                         </div>
                     </div>
                 </div>
@@ -110,6 +112,7 @@
     </footer>
     <!-- end footer -->
     <!-- Javascript files-->
+    <script src='cargarBusqueda.js'></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
