@@ -41,12 +41,12 @@
   box-sizing: content-box;
   height: 60px;
   padding: 0 46px 0 10px;
-  border-color: #ff0000;
+  border-color: #AE0000;
   border-radius: 35px; /* (height/2) + border-width */
   border-style: solid;
   border-width: 5px;
   margin-top: 15px;
-  color:  #ff0000;
+  color:  #AE0000;
   font-family: 'Helvetica', sans-serif;
   font-size: 26px;
   -webkit-appearance: none;
@@ -65,7 +65,7 @@
   margin-top: 20px; /* margin-top + border-width */
   margin-right: 5px; /* border-width */
   background: transparent;
-  color: #ff0000;
+  color: #AE0000;
   font-family: 'Helvetica', sans-serif;
   font-size: 40px;
   line-height: 60px;
@@ -77,7 +77,7 @@
 }
 
 .flexsearch--input:focus.flexsearch--submit {
-  color: #ff0000; 
+  color: #AE0000; 
 }
 
 .flexsearch--submit:hover {
@@ -108,3 +108,76 @@ input:-moz-placeholder {
   text-align: center;
 }
 
+.accordion {
+  background-color: #000;
+  color: #ffffff;
+  border: 5px solid black;
+  cursor: pointer;
+  padding: 15px;
+  width: 100%;
+  text-align: left;
+  outline: none;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 23px;
+  transition: 0.2s;
+}
+
+.accordion2 {
+  background-color: #000;
+  color: #ffffff;
+  border: 5px solid black;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  outline: none;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  transition: 0.2s;
+}
+.active2, .accordion2:hover {
+  background-color: #AE0000;
+}
+.accordion2:after{
+  content: "\1F6C8"; /* Unicode character */     
+  font-size: 20px;
+  float: right;
+  margin-left: 5px;
+
+}
+
+.panel2 {
+  padding: 0 18px;
+  background-color: #AE0000;
+  border: 5px solid black;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+
+.active, .accordion:hover {
+  background-color: #AE0000;
+}
+
+::-webkit-scrollbar {width: 0px; height: 0px; background: #000;}
+::-webkit-scrollbar-thumb {background-color:#333 ; border: 0px solid black;}
+.panel {
+  padding: 0 18px;
+  background-color: #AE0000;
+  border: 5px solid black;
+  max-height: 0;
+  overflow-x:hidden;
+  overflow-y:visible;
+  transition: max-height 0.2s ease-out;
+}
+.accordion:after {
+  content: '\1F601'; /* Unicode character for "plus" sign (+) */     
+  font-size: 30px;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\1F973"; /* Unicode character for "minus" sign (-) */
+}

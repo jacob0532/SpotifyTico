@@ -98,7 +98,7 @@ p {
   width: 165px;
   height: 165px;
   text-align: center;
-  border: 1px solid white;
+  border: 5px solid black;
   cursor: pointer;
   position: relative;
 }
@@ -115,12 +115,12 @@ p {
 }
 
 .product {
-  background: transparent;
+  background: #000;
   transition: all 0.3s ease;
 }
 
 .product:hover {
-  background: #2c2a35;
+  background: #AE0000;
   color: #a9a9a9;
 }
 
