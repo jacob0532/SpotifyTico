@@ -19,10 +19,13 @@ https://www.tooplate.com/view/2097-pop
     <link rel="stylesheet" type="text/css" href="slick/slick.css"/>                       <!-- http://kenwheeler.github.io/slick/ -->
     <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
     <link rel="stylesheet" href="css/tooplate-style.css">                               <!-- Templatemo style -->
+    <link rel="stylesheet" href="listGridView.css">
 
     <script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this in a modern browser such as latest version of Chrome or Microsoft Edge.");</script>
     
 </head>
+
+<script src="cargarInfo.js"></script>
 
 <body>
     <div id="tm-bg"></div>
@@ -32,9 +35,16 @@ https://www.tooplate.com/view/2097-pop
                 <div class="row">
                     <div class="col-sm-12 col-md-6 col-lg-6 col-md-col-xl-6 mb-md-0 mb-sm-4 mb-4 tm-site-header-col">
                         <div class="tm-site-header">
-                            <h1 class="mb-4">POP design</h1>
+                            <h1 class="mb-4" id='nombre-artista'></h1>
                             <img src="./img/underline.png" class="img-fluid mb-4">
-                            <p>New HTML Template with pop up pages and use this layout for your website</p>        
+                            <p id='infoBanda'></p>
+
+                            <script>
+                                document.getElementById('nombre-artista').innerHTML = datosArtistaNombre.strArtist;
+                                document.getElementById('infoBanda').innerHTML = 'Genre: ' + datosArtistaId.strGenre +
+                                                                                 '<br>Mood: ' + datosArtistaId.strMood + 
+                                                                                 '<br>Style: ' + datosArtistaId.strStyle;
+                            </script>
                         </div>                        
                     </div>
                     <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
@@ -44,24 +54,41 @@ https://www.tooplate.com/view/2097-pop
                                     <div class="product">
                                         <div class="tm-nav-link">
                                             <i class="fas fa-home fa-3x tm-nav-icon"></i>
-                                            <span class="tm-nav-text">Welcome</span>
+                                            <span class="tm-nav-text" id='descripcion'>Welcome</span>
                                             <div class="product__bg"></div>        
                                         </div>                                    
                                         <div class="product__description">
                                             <div class="row mb-3">
                                                 <div class="col-12">
-                                                    <h2 class="tm-page-title">Welcome to Pop Design</h2>        
+                                                    <h2 class="tm-page-title" id='descNombre-nombreArtista'></h2>
+                                                    <script>
+                                                        document.getElementById('descNombre-nombreArtista').innerHTML = datosArtistaNombre.strArtist;
+                                                    </script>
                                                 </div>
                                             </div>                                        
                                             <div class="row">
                                                 <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                                                    <img src="./img/guitarra2.jpg" class="img-fluid mb-3">
-                                                    <p>You are allowed to download, modify and use this template for your commercial or business websites. </p>
-                                                    <p>Please tell your friends about <a rel="nofollow" href="https://fb.com/tooplate" target="_parent">Tooplate</a>. That will be very helpful for us. Thank you.</p>    
+                                                    <img id='imagenNombre' class="img-fluid mb-3">
+                                                    <p> Descripcion por nombre</p>
+                                                    <p id='descripcionNombre-artista'> </p>
+                                                    <script>
+                                                        document.getElementById('descripcionNombre-artista').innerHTML = datosArtistaNombre.strBiographyES;
+                                                        document.getElementById('imagenNombre').src = datosArtistaNombre.strArtistLogo;
+                                                    </script>
+                                                    <!--<p>Please tell your friends about <a rel="nofollow" href="https://fb.com/tooplate" target="_parent">Tooplate</a>. That will be very helpful for us. Thank you.</p>--> 
                                                 </div>
                                                 <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                                                    <p>You are NOT allowed to put this template ZIP file for a download purpose on any template collection website.</p>
-                                                    <p>If you have any kind of question or comment, please feel free to <a rel="nofollow" href="https://www.tooplate.com/contact" target="_parent">contact us</a>. You are welcome.</p>
+                                                    <img id='imagenId' class='img-fluid mb-3'>
+                                                    <p> Descripcion por id</p>
+                                                    <p id='descripcionId-artista'> <a rel="nofollow" href="https://www.tooplate.com/contact" target="_parent">contact us</a>. You are welcome.</p>
+                                                    <script>
+                                                        document.getElementById('descripcionId-artista').innerHTML = datosArtistaId.strBiographyES;
+                                                        let imagenIdURL = datosArtistaId.strArtistBanner;
+                                                        if(imagenId=datosArtistaId.strArtistBanner != null)
+                                                        {
+                                                           document.getElementById('imagenId').src = imagenIdURL; 
+                                                        }
+                                                    </script>
                                                     <img src="./img/welcome-2.jpg" class="img-fluid">
                                                 </div>                                        
                                             </div>
@@ -81,15 +108,27 @@ https://www.tooplate.com/view/2097-pop
                                             <div class="p-sm-4 p-2">
                                                 <div class="row mb-3">
                                                     <div class="col-12">
-                                                        <h2 class="tm-page-title">Background of Our Team</h2>        
+                                                        <h2 class="tm-page-title">Discografia</h2>        
                                                     </div>
                                                 </div>
                                                 <div class="row tm-reverse-sm">
                                                     <div class="col-sm-12 col-md-8 col-lg-8 col-xl-8">
-                                                        <p class="mb-4">Vestibulum aliquet, arcu accumsan lobortis bibendum, justo velit efficitur lorem, at pulvinar mi justo nec lacus. Nullam et libero aliquet, luctus nunc sit amet, tincidunt ligula. Sed finibus ante sed tortor cursus, nec malesuada lectus interdum.</p>
+                                                        <!--<p class="mb-4" id='posicion-discografia'>Vestibulum aliquet, arcu accumsan lobortis bibendum, justo velit efficitur lorem, at pulvinar mi justo nec lacus. Nullam et libero aliquet, luctus nunc sit amet, tincidunt ligula. Sed finibus ante sed tortor cursus, nec malesuada lectus interdum.</p>
                                                         <p class="mb-4">Sed ex turpis, vulputate in efficitur id, lobortis eget nibh. Pellentesque maximus ipsum eget velit imperdiet sodales. Suspendisse in blandit mi.</p>
                                                         <p class="mb-5">Pellentesque finibus felis risus, ut malesuada felis viverra at. Quisque accumsan in mi non hendrerit.</p>
-                                                        <a href="#" class="btn tm-btn-gray">Read More</a>        
+                                                        <a href="#" class="btn tm-btn-gray">Read More</a>-->
+                                                        <div class="row" id='lista-resultados'>
+                                                            <script>
+                                                                let htmlString = '';
+                                                                for(let i = 0; datosDiscografia.album[i] != null; i++){
+                                                                    htmlString +=  `<div class="column" style="background-color:#aaa";>
+                                                                                        <h2>` + datosDiscografia.album[i].strAlbum + `</h2>
+                                                                                        <p>` + datosDiscografia.album[i].intYearReleased + `</p>
+                                                                                    </div>`;
+                                                                }
+                                                                document.getElementById('lista-resultados').innerHTML = htmlString;
+                                                            </script>
+                                                          </div>
                                                     </div>                                                
                                                     <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 mb-lg-0 mb-sm-4 mb-4">
                                                         <img src="./img/team.jpg" class="img-fluid">
@@ -123,12 +162,32 @@ https://www.tooplate.com/view/2097-pop
                                                     <div class="col-12">
                                                         <div class="p-sm-4 p-2 tm-img-container">
                                                             <div class="tm-img-slider" id="tmImgSlider">
-                                                              <a href="#" class="tm-slider-img-link"><img src="./img/gallery-img-01-tn.jpg" alt="Image 1" class="img-fluid tm-slider-img"></a>
-                                                              <a href="#" class="tm-slider-img-link"><img src="./img/gallery-img-02-tn.jpg" alt="Image 2" class="img-fluid tm-slider-img"></a>
-                                                              <a href="#" class="tm-slider-img-link"><img src="./img/gallery-img-03-tn.jpg" alt="Image 3" class="img-fluid tm-slider-img"></a>
-                                                              <a href="#" class="tm-slider-img-link"><img src="./img/gallery-img-04-tn.jpg" alt="Image 4" class="img-fluid tm-slider-img"></a>
-                                                              <a href="#" class="tm-slider-img-link"><img src="./img/gallery-img-05-tn.jpg" alt="Image 5" class="img-fluid tm-slider-img"></a>
-                                                              <a href="#" class="tm-slider-img-link"><img src="./img/gallery-img-06-tn.jpg" alt="Image 6" class="img-fluid tm-slider-img"></a>
+                                                                <a href="#" class="tm-slider-img-link"><img src="./img/gallery-img-01-tn.jpg" alt="Image 1" class="img-fluid tm-slider-img"></a>
+                                                                <a href="#" class="tm-slider-img-link"><img src="./img/gallery-img-02-tn.jpg" alt="Image 2" class="img-fluid tm-slider-img"></a>
+                                                                <a href="#" class="tm-slider-img-link"><img src="./img/gallery-img-03-tn.jpg" alt="Image 3" class="img-fluid tm-slider-img"></a>
+                                                                <a href="#" class="tm-slider-img-link"><img src="./img/gallery-img-04-tn.jpg" alt="Image 4" class="img-fluid tm-slider-img"></a>
+                                                                <a href="#" class="tm-slider-img-link"><img src="./img/gallery-img-05-tn.jpg" alt="Image 5" class="img-fluid tm-slider-img"></a>
+                                                                <a href="#" class="tm-slider-img-link"><img src="./img/gallery-img-06-tn.jpg" alt="Image 6" class="img-fluid tm-slider-img"></a>
+                                                                <!--
+                                                                <script>
+                                                                    let htmlString = '';
+                                                                    if (datosArtistaId.strArtistFanart != null) {
+                                                                        htmlString += '<a href="#" class="tm-slider-img-link"><img src="' + datosArtistaId.strArtistFanart + '" alt="Image 1" class="img-fluid tm-slider-img"></a>';
+                                                                    }
+                                                                    if (datosArtistaId.strArtistFanart2 != null) {
+                                                                        htmlString += '<a href="#" class="tm-slider-img-link"><img src="' + datosArtistaId.strArtistFanart2 + '" alt="Image 2" class="img-fluid tm-slider-img"></a>';
+                                                                    }
+                                                                    if (datosArtistaId.strArtistFanart3 != null) {
+                                                                        htmlString += '<a href="#" class="tm-slider-img-link"><img src="' + datosArtistaId.strArtistFanart3 + '" alt="Image 3" class="img-fluid tm-slider-img"></a>';
+                                                                    }
+                                                                    if (datosArtistaId.strArtistFanart4 != null) {
+                                                                        htmlString += '<a href="#" class="tm-slider-img-link"><img src="' + datosArtistaId.strArtistFanart4 + '" alt="Image 4" class="img-fluid tm-slider-img"></a>';
+                                                                    }
+                                                                    document.getElementById('tmImgSlider').innerHTML = htmlString;
+                                                                    document.getElementById('tmImgSlider').innerHTML = '';
+                                                            
+                                                                </script>
+                                                            -->
                                                             </div>
                                                         </div>  
                                                     </div>
@@ -192,6 +251,7 @@ https://www.tooplate.com/view/2097-pop
         </div> <!-- .tm-main-content -->  
     </div>
     <!-- load JS -->
+    <script src="listGridView.js"></script>
     <script src="js/jquery-3.2.1.slim.min.js"></script>         <!-- https://jquery.com/ -->    
     <script src="slick/slick.min.js"></script>                  <!-- http://kenwheeler.github.io/slick/ -->  
     <script src="js/anime.min.js"></script>                     <!-- http://animejs.com/ -->
@@ -225,6 +285,5 @@ https://www.tooplate.com/view/2097-pop
         });
 
     </script>             
-
 </body>
 </html>
