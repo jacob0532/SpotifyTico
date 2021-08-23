@@ -40,21 +40,30 @@ const getData = (url) => {
         }
     };
     */
-    return JSON.parse(xhr.response);
+    return xhr.response;
   
 };
 
 const cargarPantallaArtista = (datosArtistaPosicion) => {
     let artistId = data.artists[datosArtistaPosicion].idArtist;
-    let datosArtistaId = getData('https://theaudiodb.com/api/v1/json/1/artist.php?i=' + artistId);
+    let datosArtistaId = JSON.parse(getData('https://theaudiodb.com/api/v1/json/1/artist.php?i=' + artistId));
     let datosDiscografia = getData('https://theaudiodb.com/api/v1/json/1/discography.php?s=' + data.artists[datosArtistaPosicion].strArtist);
-    let datosAlbumes = getData('https://theaudiodb.com/api/v1/json/1/album.php?i=' + artistId);
+    let datosAlbumes = JSON.parse(getData('https://theaudiodb.com/api/v1/json/1/album.php?i=' + artistId));
     let datosVideos = getData('https://theaudiodb.com/api/v1/json/1/mvid.php?i=' + artistId);
+    let datosInfoAlbumes = [];
+    let albumId = '';
+    for (let i = 0; i < datosAlbumes.album.length; i++) {
+        datosInfoAlbumes.push([]);
+        albumId = datosAlbumes.album[i].idAlbum;
+        datosInfoAlbumes[i].push(getData('https://theaudiodb.com/api/v1/json/1/album.php?m=' + albumId));
+        datosInfoAlbumes[i].push(getData('https://theaudiodb.com/api/v1/json/1/track.php?m=' + albumId));
+    }
     localStorage.setItem('datos-artista', JSON.stringify(data.artists[datosArtistaPosicion]));
     localStorage.setItem('datos-artistaId', JSON.stringify(datosArtistaId.artists[0]));
-    localStorage.setItem('datos-discografia', JSON.stringify(datosDiscografia));
-    localStorage.setItem('datos-albumes', JSON.stringify(datosAlbumes));
-    localStorage.setItem('datos-videos', JSON.stringify(datosVideos));
+    localStorage.setItem('datos-discografia', datosDiscografia);
+    localStorage.setItem('datos-albumes', datosAlbumes);
+    localStorage.setItem('datos-videos', datosVideos);
+    localStorage.setItem('datos-albumes', datosInfoAlbumes.toString());
     window.location.href = "grupoMusical.html";
 }
 
@@ -72,5 +81,5 @@ const cargarResultados = () => {
     //posicionResultados.innerHTML = htmlString;
 };
 
-searchbtn.addEventListener('click', function() { data = getData('https://theaudiodb.com/api/v1/json/1/search.php?s=' + document.getElementById("search-bar").value);
+searchbtn.addEventListener('click', function() { data = JSON.parse(getData('https://theaudiodb.com/api/v1/json/1/search.php?s=' + document.getElementById("search-bar").value));
                                                  cargarResultados(); });
