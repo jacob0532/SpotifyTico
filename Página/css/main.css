@@ -181,3 +181,12 @@ input:-moz-placeholder {
 .active:after {
   content: "\1F973"; /* Unicode character for "minus" sign (-) */
 }
+
+
+.carousel-indicators .active {
+    background-color: green;
+}
+
+.carousel-indicators li {
+    background-color: burlywood;
+}
