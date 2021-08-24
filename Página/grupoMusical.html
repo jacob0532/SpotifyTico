@@ -329,113 +329,26 @@ https://www.tooplate.com/view/2097-pop
                 <script>
                     var track = null;
                     var album = null;
+                    var pistas = null;
                     var htmlString = `
                     <h2>Albumes</h2>
                     <p>Click on the buttons to open the collapsible content.</p>`;
 
-                    for(let i = 0; i < datosAlbumes.length; i += 2) {
-                        album = datosAlbumes[i].album[0];
+                    for(let i = 0; i < datosAlbumes.album.length; i++) {
+                        albumSelec = datosAlbumes.album[i];
                         htmlString += `
-                        <button class="accordion"><img src="./img/icon1.png" style="width:10%;">` + album.strAlbum + `</button>
+                        <button class="accordion" onclick="cargarPistas(` + i + `)"><img src="./img/icon1.png" style="width:10%;">` + albumSelec.strAlbum + `</button>
                         <div class="panel">` + 
-                            `<p>` + album.strDescriptionES + `</p>
-                        <div class="container tm-site-header-container">
-                            <h2>Pistas</h2>
-                            <p>Click on the buttons to open the collapsible content.</p>`;
-                        for(let j = 0; j < datosAlbumes[i+1].track.length; j++) {
-                            track = datosAlbumes[i+1].track[j];
-                            htmlString += `
-                            <button class="accordion2"><img src="./img/icon3.png" style="width:4%;">` + track.strTrack + `</button>
-                            <div class="panel2">
-                                <p>` + track.strDescriptionES +`</p>
-                                <iframe width="800" height="200" src="` + track.strMusicVid + `"
-                                    title="YouTube video player" frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen></iframe>
-                            </div>`;
-                            
-                        }
-                        htmlString += '</div> </div>';
+                            `<p>` + albumSelec.strDescriptionES + `</p>
+                        <div class="container tm-site-header-container" id="album` + i + `"></div>
+                        </div>`;
+                        
                     }
-                    document.getElementById('seccionAlbums').innerHTML = htmlString + '</div>';
+                    document.getElementById('seccionAlbums').innerHTML = htmlString;
                     
                 </script>
 
-                <!--
-                <button class="accordion"><img src="./img/icon1.png" style="width:10%;">Album 1</button>
-                <div class="panel">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-                        ea commodo consequat.</p>
-                    <div class="container tm-site-header-container">
-                        <h2>Animated Accordion</h2>
-                        <p>Click on the buttons to open the collapsible content.</p>
-                        
-                        <button class="accordion2"><img src="./img/icon3.png" style="width:4%;">Pista 1</button>
-                        
-                        <div class="panel2">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-                                et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                aliquip ex ea commodo consequat.</p>
-                            <ol>
-                                <li>Pista1</li>
-                                <div>aqui poner detalles de la pista</div>
-                                <iframe width="800" height="200" src="https://www.youtube.com/embed/ip_XlmlJQH4"
-                                    title="YouTube video player" frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen></iframe>
-                                <li>Pista2</li>
-                                <li>Pista3</li>
-                                <li>Pista4</li>
-                            </ol>
-                        </div> -->
-                        
-                        <!--
-                        <button class="accordion2"><img src="./img/icon3.png" style="width:4%;">Pista 2</button>
-                        <div class="panel2">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-                                et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                aliquip ex ea commodo consequat.</p>
-                            <li>pistaoalbum1</li>
-                            <iframe width="600" height="600" src="https://www.youtube.com/embed/ip_XlmlJQH4"
-                                title="YouTube video player" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
-                            <li>pistaoalbum2</li>
-                            <li>pistaoalbum3</li>
-                            <li>pistaoalbum4</li>
-                        </div>
-            
-                        <button class="accordion2"><img src="./img/icon3.png" style="width:4%;">Pista 3</button>
-                        <div class="panel2">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-                                et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                aliquip ex ea commodo consequat.</p>
-                            <li>pistaoalbum1</li>
-                            <iframe width="600" height="600" src="https://www.youtube.com/embed/ip_XlmlJQH4"
-                                title="YouTube video player" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
-                            <li>pistaoalbum2</li>
-                            <li>pistaoalbum3</li>
-                            <li>pistaoalbum4</li>
-                        </div>
-                    </div> 
-                
-                </div>
-                -->
-                <!--
-                <button class="accordion"><img src="./img/icon1.png" style="width:10%;">Album 2</button>
-                <div class="panel">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-                        ea commodo consequat.</p>
-                </div>
-
-                <button class="accordion"><img src="./img/icon1.png" style="width:10%;">Album 3</button>
-                <div class="panel">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>-->
-
+               
             <footer>
                 <p class="small tm-copyright-text">Copyright &copy; <span class="tm-current-year">2020</span> Your Company. 
                 
@@ -450,7 +363,6 @@ https://www.tooplate.com/view/2097-pop
     <script src="js/anime.min.js"></script>                     <!-- http://animejs.com/ -->
     <script src="js/main.js"></script>  
 
-    
 
     <script>      
 

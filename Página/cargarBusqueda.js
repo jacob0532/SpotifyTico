@@ -10,38 +10,10 @@ let data = null;
             otros: Busqueda por id (Posicion dentro del array de resultados)
 */
 const getData = (url) => {
-    
-    //htmlString = '';
-
     const xhr = new XMLHttpRequest();
-    /*
-    let stringDuda = '';
-    
-    if(tipo == -1) {
-        stringDuda = 'https://theaudiodb.com/api/v1/json/1/search.php?s=' + document.getElementById("search-bar").value; 
-    }
-    else{
-        stringDuda = 'https://theaudiodb.com/api/v1/json/1/artist.php?i=' + data.artists[posicion].idArtist;
-    }
-    */
-    
     xhr.open('GET', url, false);
     xhr.send(null);
-  
-    
-    /*
-    xhr.onload = () => {
-        if(posicion == - 1) {
-        data = xhr.response;
-        cargarResultados(data);
-        }
-        else{
-            datosArtistaId = xhr.response;
-        }
-    };
-    */
     return xhr.response;
-  
 };
 
 const cargarPantallaArtista = (datosArtistaPosicion) => {
@@ -50,20 +22,23 @@ const cargarPantallaArtista = (datosArtistaPosicion) => {
     let datosDiscografia = getData('https://theaudiodb.com/api/v1/json/1/discography.php?s=' + data.artists[datosArtistaPosicion].strArtist);
     let datosAlbumes = JSON.parse(getData('https://theaudiodb.com/api/v1/json/1/album.php?i=' + artistId));
     let datosVideos = getData('https://theaudiodb.com/api/v1/json/1/mvid.php?i=' + artistId);
+    /*
     let datosInfoAlbumes = [];
     let albumId = '';
     for (let i = 0; i < datosAlbumes.album.length; i++) {
         datosInfoAlbumes.push([]);
         albumId = datosAlbumes.album[i].idAlbum;
-        datosInfoAlbumes[i].push(getData('https://theaudiodb.com/api/v1/json/1/album.php?m=' + albumId));
+        //datosInfoAlbumes[i].push(getData('https://theaudiodb.com/api/v1/json/1/album.php?m=' + albumId));
+        datosInfoAlbumes[i].push(datosAlbumes.album[i]);
         datosInfoAlbumes[i].push(getData('https://theaudiodb.com/api/v1/json/1/track.php?m=' + albumId));
     }
+    */
     localStorage.setItem('datos-artista', JSON.stringify(data.artists[datosArtistaPosicion]));
     localStorage.setItem('datos-artistaId', JSON.stringify(datosArtistaId.artists[0]));
     localStorage.setItem('datos-discografia', datosDiscografia);
-    localStorage.setItem('datos-albumes', datosAlbumes);
+    localStorage.setItem('datos-albumes', JSON.stringify(datosAlbumes));
     localStorage.setItem('datos-videos', datosVideos);
-    localStorage.setItem('datos-albumes', datosInfoAlbumes.toString());
+    //localStorage.setItem('datos-albumes', datosInfoAlbumes.toString());
     window.location.href = "grupoMusical.html";
 }
 
