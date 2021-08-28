@@ -22,23 +22,13 @@ https://www.tooplate.com/view/2097-pop
     <link rel="stylesheet" href="css/tooplate-style.css">                               <!-- Templatemo style -->
     <link rel="stylesheet" href="listGridView.css">
     
-        <script src=
-"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" 
-                integrity=
-"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" 
-                crossorigin="anonymous">
-      </script>
-        <script src=
-"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" 
-                integrity=
-"sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" 
-                crossorigin="anonymous">
-      </script>
-    <script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this in a modern browser such as latest version of Chrome or Microsoft Edge.");</script>
-    
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script><script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" 
+    integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous">
+    </script>
 </head>
 
-<script src="cargarInfo.js"></script>
+<!--<script src="cargarInfo.js"></script>-->
 
 <body>
     <div id="tm-bg"></div>
@@ -48,164 +38,53 @@ https://www.tooplate.com/view/2097-pop
                 <div class="row">
                     <div class="col-sm-12 col-md-6 col-lg-6 col-md-col-xl-6 mb-md-0 mb-sm-4 mb-4 tm-site-header-col">
                         <div class="tm-site-header">
-                            <h1 class="mb-4" id='nombre-artista'></h1>
+                            <h1 id="titulo123" class="mb-4" id='nombre-artista'></h1>
                             <img src="./img/underline.png" class="img-fluid mb-4">
+                            <img id='imagenLogo' width="150" height="100" align="left">
                             <p id='infoBanda'></p>
-
-                            <script>
-                                document.getElementById('nombre-artista').innerHTML = datosArtistaNombre.strArtist;
-                                document.getElementById('infoBanda').innerHTML = 'Genre: ' + datosArtistaId.strGenre +
-                                                                                 '<br>Mood: ' + datosArtistaId.strMood + 
-                                                                                 '<br>Style: ' + datosArtistaId.strStyle;
-                            </script>
                         </div>                        
                     </div>
                     <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
                         <div class="content">
                             <div class="grid">
-                                <div class="grid__item" id="home-link">
+                                <div class="grid__item" onclick="obtenerInformacionArtista(2)">
                                     <div class="product">
                                         <div class="tm-nav-link">
                                             <i class="fas fa-info fa-3x tm-nav-icon"></i>
                                             <span class="tm-nav-text" id='descripcion'>Información</span>
                                             <div class="product__bg"></div>        
                                         </div>                                    
-                                        <div class="product__description">
-                                            <div class="row mb-3">
-                                                <div class="col-12">
-                                                    <h2 class="tm-page-title" id='descNombre-nombreArtista'></h2>
-                                                    <script>
-                                                        document.getElementById('descNombre-nombreArtista').innerHTML = datosArtistaNombre.strArtist;
-                                                    </script>
-                                                </div>
-                                            </div>                                        
-                                            <div class="row">
-                                                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                                                    <img id='imagenNombre' class="img-fluid mb-3">
-                                                    <p> Descripcion por nombre</p>
-                                                    <p id='descripcionNombre-artista'> </p>
-                                                    <script>
-                                                        document.getElementById('descripcionNombre-artista').innerHTML = datosArtistaNombre.strBiographyES;
-                                                        document.getElementById('imagenNombre').src = datosArtistaNombre.strArtistLogo;
-                                                    </script>
-                                                    <!--<p>Please tell your friends about <a rel="nofollow" href="https://fb.com/tooplate" target="_parent">Tooplate</a>. That will be very helpful for us. Thank you.</p>--> 
-                                                </div>
-                                                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                                                    <img id='imagenId' class='img-fluid mb-3'>
-                                                    <p> Descripcion por id</p>
-                                                    <p id='descripcionId-artista'> <a rel="nofollow" href="https://www.tooplate.com/contact" target="_parent">contact us</a>. You are welcome.</p>
-                                                    <script>
-                                                        document.getElementById('descripcionId-artista').innerHTML = datosArtistaId.strBiographyES;
-                                                        let imagenIdURL = datosArtistaId.strArtistBanner;
-                                                        if(imagenId=datosArtistaId.strArtistBanner != null)
-                                                        {
-                                                           document.getElementById('imagenId').src = imagenIdURL; 
-                                                        }
-                                                    </script>
-                                                    <img src="./img/welcome-2.jpg" class="img-fluid">
-                                                </div>                                        
-                                            </div>
-                                            
-                                        </div>
+
                                     </div>
                                 </div>
-
-                                <div class="grid__item" id="team-link">
+                        
+                                <div class="grid__item" onclick="obtenerInformacionAlbum()">
                                     <div class="product">
                                         <div class="tm-nav-link">
                                             <i class="fas fa-book fa-3x tm-nav-icon"></i>
-                                            <span class="tm-nav-text">Biografía</span>
+                                            <span class="tm-nav-text">Álbumes</span>
                                             <div class="product__bg"></div>            
                                         </div>                                     
-                                        <div class="product__description">
-                                            <div class="p-sm-4 p-2">
-                                                <div class="row mb-3">
-                                                    <div class="col-12">
-                                                        <h2 class="tm-page-title">Discografia</h2>        
-                                                    </div>
-                                                </div>
-                                                <div class="row tm-reverse-sm">
-                                                    <div class="col-sm-12 col-md-8 col-lg-8 col-xl-8">
-                                                        <!--<p class="mb-4" id='posicion-discografia'>Vestibulum aliquet, arcu accumsan lobortis bibendum, justo velit efficitur lorem, at pulvinar mi justo nec lacus. Nullam et libero aliquet, luctus nunc sit amet, tincidunt ligula. Sed finibus ante sed tortor cursus, nec malesuada lectus interdum.</p>
-                                                        <p class="mb-4">Sed ex turpis, vulputate in efficitur id, lobortis eget nibh. Pellentesque maximus ipsum eget velit imperdiet sodales. Suspendisse in blandit mi.</p>
-                                                        <p class="mb-5">Pellentesque finibus felis risus, ut malesuada felis viverra at. Quisque accumsan in mi non hendrerit.</p>
-                                                        <a href="#" class="btn tm-btn-gray">Read More</a>-->
-                                                        <div class="row" id='lista-resultados'>
-                                                            <script>
-                                                                var htmlString = '';
-                                                                for(let i = 0; datosDiscografia.album[i] != null; i++){
-                                                                    htmlString +=  `<div class="column" style="background-color:#aaa";>
-                                                                                        <h2>` + datosDiscografia.album[i].strAlbum + `</h2>
-                                                                                        <p>` + datosDiscografia.album[i].intYearReleased + `</p>
-                                                                                    </div>`;
-                                                                }
-                                                                document.getElementById('lista-resultados').innerHTML = htmlString;
-                                                            </script>
-                                                          </div>
-                                                    </div>                                                
-                                                    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 mb-lg-0 mb-sm-4 mb-4">
-                                                        <img src="./img/team.jpg" class="img-fluid">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
-                                <div class="grid__item" onclick="ponerImagenes()">
+                            
+                                <div class="grid__item" onclick="obtenerInformacionArtista(3)">
                                     <div class="product" >
                                         <div class="tm-nav-link">
                                             <i class="fas fa-images fa-3x tm-nav-icon"></i>
                                             <span class="tm-nav-text">Imágenes</span>
                                             <div class="product__bg"></div>             
-                                        </div>                                                                 
-                                        <div class="product__description">
-                                            <div class="p-sm-4 p-2">
-                                                <div class="row mb-3">
-                                                    <div class="col-12">
-                                                        <h2 class="tm-page-title">Imágenes</h2>        
-                                                    </div>
-                                                </div>
-                                                <div class="row mb-3">
-                                                    <div class="col-12">
-                                                        <p>Aliquam interdum, nisl sed faucibus tempor, massa velit laoreet ipsum, et faucibus sapien magna at enim. Suspendisse a dictum tortor, vel rhoncus libero. Integer at lacus velit. Nullam dapibus venenatis placerat.</p>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-12">
-                                                        <div class="p-sm-4 p-2 tm-img-container">
-                                                            <div class="tm-img-slider" id="tmImgSlider">
-                                                                <a href="#" class="tm-slider-img-link"><img src="./img/gallery-img-01-tn.jpg" alt="Image 1" class="img-fluid tm-slider-img"></a>
-                                                                <a href="#" class="tm-slider-img-link"><img src="./img/gallery-img-02-tn.jpg" alt="Image 2" class="img-fluid tm-slider-img"></a>
-                                                                <a href="#" class="tm-slider-img-link"><img src="./img/gallery-img-03-tn.jpg" alt="Image 3" class="img-fluid tm-slider-img"></a>
-                                                                <a href="#" class="tm-slider-img-link"><img src="./img/gallery-img-04-tn.jpg" alt="Image 4" class="img-fluid tm-slider-img"></a>
-                                                                <a href="#" class="tm-slider-img-link"><img src="./img/gallery-img-05-tn.jpg" alt="Image 5" class="img-fluid tm-slider-img"></a>
-                                                                <a href="#" class="tm-slider-img-link"><img src="./img/gallery-img-06-tn.jpg" alt="Image 6" class="img-fluid tm-slider-img"></a> 
-                                                            </div>
-                                                        </div>  
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>       
+                                        </div>                                                            
                                     </div>
                                 </div>
 
-                                <div class="grid__item">
+                                <div class="grid__item" onclick="obtenerVideos()">
                                     <div class="product">
                                         <div class="tm-nav-link">
                                             <i class="fas fa-file-video fa-3x tm-nav-icon"></i>
-                                            <span class="tm-nav-text">Discografía</span>
+                                            <span class="tm-nav-text">Videos</span>
                                             <div class="product__bg"></div>             
                                         </div>                                                              
-                                        <div class="product__description">
-                                            <div class="pt-sm-4 pb-sm-4 pl-sm-5 pr-sm-5 pt-2 pb-2 pl-3 pr-3">
-                                                <div class="row mb-3">
-                                                    <div class="col-12">
-                                                        <h2 class="tm-page-title">Discografía</h2>        
-                                                    </div>
-                                                </div>
-                                                 HOLA MUNDO                                                    
-                                            </div>                                            
-                                        </div>
                                     </div>
                                 </div>
                             </div> 
@@ -215,113 +94,19 @@ https://www.tooplate.com/view/2097-pop
             </div>
 
 
-        
-            <div class="container-fluid"style="text-align: center;">
-            <h2 class="tm-page-title">Imágenes</h2>
-            <div id="GFG" class="carousel slide" data-ride="carousel">
-                <!-- Indicators -->
-                <ul class="carousel-indicators">
-                    <li data-target="#GFG" data-slide-to="0" class="active"></li>
-                    <li data-target="#GFG" data-slide-to="1"></li>
-                    <li data-target="#GFG" data-slide-to="2"></li>
-                    <li data-target="#GFG" data-slide-to="3"></li>
-                    <li data-target="#GFG" data-slide-to="4"></li>
-                </ul>
-  
-                <!-- The slideshow -->
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src=
-"https://media.geeksforgeeks.org/wp-content/uploads/geeksforgeeks-9.png" 
-                             alt="GFG" />
-                    </div>
-  
-                    <div class="carousel-item">
-                        <img src=
-"https://media.geeksforgeeks.org/wp-content/uploads/20190918234528/colorize1.png"
-                             alt="GFG" />
-                    </div>
-  
-                    <div class="carousel-item">
-                        <img src=
-"https://media.geeksforgeeks.org/wp-content/uploads/20190918234815/colorize2.png" 
-                             alt="GFG" />
-                    </div>
-
-                    <div class="carousel-item">
-                        <img src=
-"https://media.geeksforgeeks.org/wp-content/uploads/20190918234815/colorize2.png" 
-                             alt="GFG" />
-                    </div>
-
-                    <div class="carousel-item">
-                        <img src=
-"https://media.geeksforgeeks.org/wp-content/uploads/20190918234815/colorize2.png" 
-                             alt="GFG" />
-                    </div>
-                </div>
-  
-                <a class="carousel-control-prev" 
-                   href="#GFG" 
-                   data-slide="prev">
-                    <span class="carousel-control-prev-icon">
-                  </span>
-                </a>
-                <a class="carousel-control-next"
-                   href="#GFG"
-                   data-slide="next">
-                    <span class="carousel-control-next-icon">
-                  </span>
-                </a>
+                                           
+            <!-- Este es el Slides de imagenes abajo está el script-->
+            <div id='GFG' class="container-fluid"style="text-align: center;">
             </div>
-        </div>
-    
-
-
-  
-          
-           
-            
-
-
+               
+   
             <br>
-            <div class="container tm-site-header-container"> 
-                <h2>Animated Accordion</h2>
-                <p>Click on the buttons to open the collapsible content.</p>
-
-                <button class="accordion"><img src="./img/icon1.png" style="width:10%;">Disco 1</button>
-                <div class="panel">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                    <ol>
-                    <li>pistaoalbum1</li>
-                    <li>pistaoalbum2</li>
-                    <li>pistaoalbum3</li>
-                    <li>pistaoalbum4</li>
-                    </ol>
-                </div>
-
-                <button class="accordion"><img src="./img/icon1.png" style="width:10%;">Disco 2</button>
-                <div class="panel">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                  <ol>
-                    <li>pistaoalbum1</li>
-                    <li>pistaoalbum2</li>
-                    <li>pistaoalbum3</li>
-                    <li>pistaoalbum4</li>
-                    </ol>
-                </div>
-
-                <button class="accordion"><img src="./img/icon1.png" style="width:10%;">Disco 3</button>
-                <div class="panel">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                  <ol>
-                    <li>pistaoalbum1</li>
-                    <li>pistaoalbum2</li>
-                    <li>pistaoalbum3</li>
-                    <li>pistaoalbum4</li>
-                    </ol>
-                </div>
+            <div style="background-color: black;"id="contenedorDiscos"class="container tm-site-header-container"> 
             </div> 
+            <div style="background-color: black;"id="contenedorDiscos2"class="container tm-site-header-container"> 
+
+            </div> 
+
 
 
             <br>
@@ -358,9 +143,7 @@ https://www.tooplate.com/view/2097-pop
                         htmlString += '</div> </div>';
                     }
                     document.getElementById('seccionAlbums').innerHTML = htmlString + '</div>';
-                    
                 </script>
-
                 <!--
                 <button class="accordion"><img src="./img/icon1.png" style="width:10%;">Album 1</button>
                 <div class="panel">
@@ -435,7 +218,6 @@ https://www.tooplate.com/view/2097-pop
                 <button class="accordion"><img src="./img/icon1.png" style="width:10%;">Album 3</button>
                 <div class="panel">
                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>-->
-
             <footer>
                 <p class="small tm-copyright-text">Copyright &copy; <span class="tm-current-year">2020</span> Your Company. 
                 
@@ -449,8 +231,9 @@ https://www.tooplate.com/view/2097-pop
     <script src="slick/slick.min.js"></script>                  <!-- http://kenwheeler.github.io/slick/ -->  
     <script src="js/anime.min.js"></script>                     <!-- http://animejs.com/ -->
     <script src="js/main.js"></script>  
-
+    <script src="consumoAPI.js"></script>
     
+
 
     <script>      
 
@@ -513,29 +296,7 @@ https://www.tooplate.com/view/2097-pop
 
 
     <script type="text/javascript">
-        function ponerImagenes(){
-            document.getElementById('GFG').innerHTML = "<ul class='carousel-indicators'> <li data-target='#GFG' data-slide-to='0' class='active'></li><li data-target='#GFG' data-slide-to='1'></li><li data-target='#GFG' data-slide-to='2'></li><li data-target='#GFG' data-slide-to='3'></li><li data-target='#GFG' data-slide-to='4'></li></ul><div class='carousel-inner'><div class='carousel-item active'><img src='"+datosArtistaId.strArtistFanart+"'alt='GFG' /></div><div class='carousel-item'><img src='"+datosArtistaId.strArtistFanart2+"'alt='GFG' /></div><div class='carousel-item'><img src='"+datosArtistaId.strArtistFanart3+"'alt='GFG' /></div></div><a class='carousel-control-prev' href='#GFG' data-slide='prev'><span class='carousel-control-prev-icon'></span></a><a class='carousel-control-next'href='#GFG'data-slide='next'><span class='carousel-control-next-icon'></span></a>";
-
-            /*
-            let htmlString = '';
-            var x = document.getElementById('tmImgSlider');
-            window.alert(datosArtistaId.strArtistFanart);
-            if (datosArtistaId.strArtistFanart != null) {
-                htmlString += '<a href="#" class="tm-slider-img-link"><img src="' + datosArtistaId.strArtistFanart + '" alt="Image 1" class="img-fluid tm-slider-img"></a>';
-            }
-            if (datosArtistaId.strArtistFanart2 != null){
-                htmlString += '<a href="#" class="tm-slider-img-link"><img src="' + datosArtistaId.strArtistFanart2 + '" alt="Image 2" class="img-fluid tm-slider-img"></a>';
-            }
-            if (datosArtistaId.strArtistFanart3 != null){
-                htmlString += '<a href="#" class="tm-slider-img-link"><img src="' + datosArtistaId.strArtistFanart3 + '" alt="Image 3" class="img-fluid tm-slider-img"></a>';
-            }
-            if (datosArtistaId.strArtistFanart4 != null){
-                htmlString += '<a href="#" class="tm-slider-img-link"><img src="' + datosArtistaId.strArtistFanart4 + '" alt="Image 4" class="img-fluid tm-slider-img"></a>';
-            }
-            document.getElementById('tmImgSlider').innerHTML = htmlString;
-            document.getElementById('tmImgSlider').innerHTML = '';*/
-
-        }
+        
     
 
     </script>            
